@@ -1,0 +1,79 @@
+*{
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+}
+.logo {
+  width: 200px;
+}
+
+.nav-items > ul {
+  display: flex;
+  padding: 0px 20px;
+  list-style-type: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.nav-items ul li {
+  padding: 10px;
+  margin: 10px;
+}
+.nav-items ul li:hover {
+  color: red;
+  border: 1px solid rgb(173, 160, 160);
+}
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.res-card {
+  margin: 15px;
+  padding: 5px;
+  width: 200px;
+  height: 400px;
+  color: black;
+}
+.res-card:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.search {
+  padding: 10px;
+}
+
+.res-logo {
+  width: 100%;
+}
+
+.filter-btn {
+  margin: 10px;
+  cursor: pointer;
+}
+.shimmer-container {
+  display: flex;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+.shimmer-card {
+  width: 200px;
+  height: 400px;
+  margin: 20px;
+  background-color: #f0f0ff;
+}
+.login {
+  padding: 0 20px;
+  cursor: pointer;
+}
+.filter {
+  display: flex;
+}
+
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
+}
