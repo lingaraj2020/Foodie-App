@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,7 +8,16 @@ import Error from "./components/Error";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Grocery from "./components/Grocery";
+// import Grocery from "./components/Grocery";
+
+//Chunking
+//dynamic bundling
+//Code Splitting
+//Lazy loading
+//on demand loading
+//dynamic import
+
+const Grocery=lazy(()=>import("./components/Grocery"));
 
 //not using keys >> indexs as keys >> unique ids
 const Applayout = () => {
@@ -39,7 +48,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path:"/grocery",
-        element:<Grocery/>
+        element:<Suspense fallback={<h1>Loading...</h1>}><Grocery/></Suspense>
       },
       {
         path: "/cart",
