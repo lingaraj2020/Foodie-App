@@ -8,6 +8,7 @@ import Error from "./components/Error";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Grocery from "./components/Grocery";
 
 //not using keys >> indexs as keys >> unique ids
 const Applayout = () => {
@@ -35,6 +36,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path:"/grocery",
+        element:<Grocery/>
       },
       {
         path: "/cart",
