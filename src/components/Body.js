@@ -1,4 +1,4 @@
-import RestrorantCard from "./RestrorantCard";
+import RestrorantCard, { withPromotedLabel } from "./RestrorantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -11,6 +11,9 @@ const Body = () => {
   const [filteredRestorant, setFilteredRestrorant] = useState([]);
 
   const [searchText, setSearchText] = useState("");
+  const RestaurantCardPromtoted = withPromotedLabel(RestrorantCard);
+
+  console.log("Body rendered", ListofRestrorants);
 
   useEffect(() => {
     fetchData();
@@ -48,7 +51,7 @@ const Body = () => {
             }}
           />
           <button
-            className="px-4 py-1 rounded-lg bg-gray-100 m-4" 
+            className="px-4 py-1 rounded-lg bg-gray-100 m-4"
             onClick={() => {
               console.log(searchText);
               const filteredRestorant = ListofRestrorants.filter((res) =>
@@ -80,7 +83,11 @@ const Body = () => {
             key={restaurant.data.id}
             to={"/restaurants/" + restaurant.data.id}
           >
-            <RestrorantCard resData={restaurant} />
+            {restaurant.data.promoted ? (
+              <RestaurantCardPromtoted resData={restaurant} />
+            ) : (
+              <RestrorantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
