@@ -13,13 +13,13 @@ const RestrorantCard = (props) => {
     avgRating,
     costForTwo,
     deliveryTime,
-  } = resData?.data;
+  } = resData;
   return (
     <div className="m-2 p-4 w-[275px] h-[400px] bg-gray-100 hover:bg-gray-300 rounded-lg">
       <img
         className="res-logo rounded-lg"
         alt="res-logo"
-        src={CDN_URL + resData.data.cloudinaryImageId}
+        src={CDN_URL + cloudinaryImageId}
       />
       <h3 className="font-bold py-3 text-lg">{name}</h3>
       <h4>{cuisines.join(" , ")}</h4>
@@ -30,7 +30,6 @@ const RestrorantCard = (props) => {
     </div>
   );
 };
-
 // Higher order component
 // input-RestaurantCard ==>RestaurantCardPromtoted
 export const withPromotedLabel = (RestaurantCard) => {

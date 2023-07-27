@@ -9,7 +9,7 @@ const RestaurantMenu = () => {
 
   const resInfo = useRestaurentMenu(resId);
 
-  const[showIndex,setShowIndex]=useState(null);
+  const [showIndex, setShowIndex] = useState(null);
 
   if (resInfo === null) return <Shimmer />;
 
@@ -34,13 +34,15 @@ const RestaurantMenu = () => {
         {cuisines.join(",")} -{costForTwoMessage}
       </p>
       {/* Categories Accordion */}
-      {categories.map((category,index) => (
+      {categories.map((category, index) => (
         //controlled components
         <RestaurantCategory
           key={category?.card.card.title}
           data={category?.card?.card}
-          showItems={index===showIndex ? true: false}
-          setShowIndex={()=> setShowIndex(index)}
+          showItems={index === showIndex ? true : false}
+          setShowIndex={() =>
+            index === showIndex ? setShowIndex(!index) : setShowIndex(index)
+          }
         />
       ))}
     </div>

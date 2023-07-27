@@ -27,8 +27,12 @@ const Body = () => {
     const json = await Data.json();
     console.log(json);
     //optional chaning
-    setListofRestrorants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestrorant(json?.data?.cards[2]?.data?.data?.cards);
+    setListofRestrorants(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestrorant(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   const OnlineStatus = useOnlineStatus();
@@ -38,8 +42,7 @@ const Body = () => {
     );
 
   const { loggedInUser, setUserName } = useContext(UserContext);
-
-  return ListofRestrorants.length === 0 ? (
+  return ListofRestrorants.length === 0 && filteredRestorant.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="m-4 p-4 body">
@@ -91,13 +94,13 @@ const Body = () => {
       <div className="flex flex-wrap">
         {filteredRestorant.map((restaurant) => (
           <Link
-            key={restaurant.data.id}
-            to={"/restaurants/" + restaurant.data.id}
+            key={restaurant?.info.id}
+            to={"/restaurants/" + restaurant?.info.id}
           >
-            {restaurant.data.promoted ? (
-              <RestaurantCardPromtoted resData={restaurant} />
+            {restaurant?.info.promoted ? (
+              <RestaurantCardPromtoted resData={restaurant?.info} />
             ) : (
-              <RestrorantCard resData={restaurant} />
+              <RestrorantCard resData={restaurant?.info} />
             )}
           </Link>
         ))}
