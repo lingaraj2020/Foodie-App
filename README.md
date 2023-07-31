@@ -55,3 +55,14 @@ import {component} from "path"
  **2 type of router in web application 
  1. client side routing-it is used to dispay our page
  2. server side routing-when we click on it it makes call to server fetches data and display on ui
+
+
+ #redux toolkit
+ -install @reduxjs/toolkit and react-redux
+ -build our store
+ -connect our store to our app
+ -slice(cart slice)
+ -dispatch(action)
+ -selector
+
+ 

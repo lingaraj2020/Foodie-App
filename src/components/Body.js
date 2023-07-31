@@ -14,7 +14,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const RestaurantCardPromtoted = withPromotedLabel(RestrorantCard);
 
-  console.log("Body rendered", ListofRestrorants);
+  // console.log("Body rendered", ListofRestrorants);
 
   useEffect(() => {
     fetchData();
@@ -25,7 +25,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await Data.json();
-    console.log(json);
+    // console.log(json);
     //optional chaning
     setListofRestrorants(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
