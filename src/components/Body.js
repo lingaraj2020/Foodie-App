@@ -60,8 +60,9 @@ const Body = () => {
             className="px-4 py-1 rounded-lg bg-gray-100 m-4"
             onClick={() => {
               console.log(searchText);
+              console.log(ListofRestrorants);
               const filteredRestorant = ListofRestrorants.filter((res) =>
-              res.data.name.toLowerCase().includes(searchText.toLowerCase())
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
               setFilteredRestrorant(filteredRestorant);
             }}
