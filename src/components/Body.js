@@ -3,7 +3,7 @@ import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/Usercontext";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   //state variable=>super power variables
@@ -28,10 +28,10 @@ const Body = () => {
     // console.log(json);
     //optional chaning
     setListofRestrorants(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestrorant(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -51,9 +51,9 @@ const Body = () => {
           <input
             type="text"
             className="border border-solid border-black rounded-sm"
-            value={loggedInUser}
+            value={searchText}
             onChange={(e) => {
-              setUserName(e.target.value);
+              setSearchText(e.target.value);
             }}
           />
           <button
@@ -61,7 +61,7 @@ const Body = () => {
             onClick={() => {
               console.log(searchText);
               const filteredRestorant = ListofRestrorants.filter((res) =>
-                res.data.name.toLowerCase().includes(searchText.toLowerCase())
+              res.data.name.toLowerCase().includes(searchText.toLowerCase())
               );
               setFilteredRestrorant(filteredRestorant);
             }}
