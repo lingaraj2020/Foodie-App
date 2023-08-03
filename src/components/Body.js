@@ -1,3 +1,4 @@
+import fetch from "cross-fetch";
 import RestrorantCard, { withPromotedLabel } from "./RestrorantCard";
 import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
