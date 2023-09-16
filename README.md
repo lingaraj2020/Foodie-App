@@ -65,4 +65,20 @@ import {component} from "path"
  -dispatch(action)
  -selector
 
- 
+ #types of testing
+ -unit testing
+ -integration testing
+ -end to end testing
+
+# testing setup in our app
+-install react testing library
+-install jest
+-install babel dependencies
+-configure babel
+-configure parcel config file to disable default babel transpilation
+-Jest npx jest --init
+-install jsdom library
+
+
+
+
